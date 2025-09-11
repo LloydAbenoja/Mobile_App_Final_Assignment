@@ -47,6 +47,7 @@
             android:textAppearance="?attr/textAppearanceBodyMedium"
             android:textColor="@color/material_dynamic_neutral0"
             android:textSize="12sp"
+            android:text="@string/description_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/property2Text"
             tools:text="Description" />

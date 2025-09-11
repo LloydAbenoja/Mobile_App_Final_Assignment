@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class LoginScreenViewModel @Inject constructor(private val repository: ApiDevRepoClass) : ViewModel() {
+class DashboardScreenViewModel @Inject constructor(private val repository: ApiDevRepoClass) : ViewModel() {
 
         val greetingText = MutableStateFlow("Hello Class")
         val apiResponseObjects = MutableStateFlow<List<ResponseItem>>(listOf())
