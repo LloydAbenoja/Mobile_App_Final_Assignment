@@ -12,6 +12,7 @@ import com.example.mobile_app_final_assignment.R
 import com.example.mobile_app_final_assignment.viewmodel.LoginScreenViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import com.example.mobile_app_final_assignment.databinding.FragmentLoginBinding
+import androidx.navigation.fragment.findNavController
 
 
 @AndroidEntryPoint
@@ -48,6 +49,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             result.onSuccess { response ->
                 Toast.makeText(requireContext(), "Login success: ${response.keypass}", Toast.LENGTH_SHORT).show()
                 // navigate to dashboard
+                findNavController().navigate(R.id.action_loginFragment_to_dashboardFragment)
             }
             result.onFailure { error ->
                 Toast.makeText(requireContext(), "Login failed: ${error.message}", Toast.LENGTH_SHORT).show()
