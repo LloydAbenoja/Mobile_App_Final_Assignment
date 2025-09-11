@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
-    android:backgroundTint="#c7ecee">
+    android:backgroundTint="@color/material_dynamic_neutral90">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -22,45 +22,54 @@
             android:layout_marginTop="16dp"
             android:text=""
             android:textAppearance="?attr/textAppearanceTitleMedium"
-            android:textColor="#303F9F"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Name" />
+            tools:text="Property1" />
 
         <TextView
             android:id="@+id/property2Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text=""
-            android:textAppearance="?attr/textAppearanceBodyMedium"
-            android:textColor="#303F9F"
-            app:layout_constraintStart_toStartOf="@id/property1Text"
-            app:layout_constraintTop_toBottomOf="@id/property1Text"
-            tools:text="ID: 2" />
+            android:textAlignment="textEnd"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/property1Text"
+            tools:text="Property2" />
 
         <TextView
-            android:id="@+id/descriptionText"
+            android:id="@+id/descAvailText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:textAppearance="?attr/textAppearanceBodyMedium"
-            android:textColor="#00796B"
-            app:layout_constraintStart_toStartOf="@id/property2Text"
-            app:layout_constraintTop_toBottomOf="@id/property2Text"
-            tools:text="More details are available" />
+            android:textColor="@color/material_dynamic_neutral30"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/property2Text"
+            tools:text="Description is available" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/navigationButton"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="19dp"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             app:cornerRadius="8dp"
-            android:backgroundTint="#00BCD4"
-            app:layout_constraintBottom_toBottomOf="@id/descriptionText"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/descriptionText" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Description" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

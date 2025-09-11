@@ -11,7 +11,7 @@ class ResponseItemViewHolder(view: View,private val navigationFunction: (Respons
 
     private val property1: TextView = view.findViewById(R.id.property1Text)
     private val property2: TextView = view.findViewById(R.id.property2Text)
-    private val description: TextView = view.findViewById(R.id.descriptionText)
+    private val description: TextView = view.findViewById(R.id.descAvailText)
     private val viewDetailsButton: Button = view.findViewById(R.id.navigationButton)
 
     fun bind(item: ResponseItem) {
