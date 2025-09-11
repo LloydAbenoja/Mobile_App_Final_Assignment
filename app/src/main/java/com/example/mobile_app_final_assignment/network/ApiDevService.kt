@@ -9,6 +9,13 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface ApiDevService {
+
+    @POST("{location}/auth")
+    suspend fun login(
+        @Path("location") location: String,
+        @Body request: AddObjectRequest
+    ): AddObjectResponse
+
     @GET("objects")
     suspend fun getAllObjects(): List<ResponseItem>
 

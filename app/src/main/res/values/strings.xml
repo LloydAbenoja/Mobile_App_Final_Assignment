@@ -9,4 +9,10 @@
     <string name="item">item</string>
     <string name="show_description">show description</string>
     <string name="description_is_available">Description is available</string>
+    <string-array name="campus_location">
+        <item>Footscray</item>
+        <item>Sydney</item>
+        <item>Brisbane</item>
+    </string-array>
+
 </resources>

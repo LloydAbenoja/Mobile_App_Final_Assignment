@@ -75,6 +75,18 @@
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <Spinner
+            android:id="@+id/campusLocationSpinner"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:boxBackgroundColor="@color/material_dynamic_neutral90"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
+
         <!-- Login Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLogin"
@@ -82,7 +94,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="97dp"
             android:layout_marginEnd="16dp"
             android:backgroundTint="@color/black"
             android:text="Login"
@@ -91,8 +103,10 @@
             android:textSize="16sp"
             app:cornerRadius="12dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/passwordLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/campusLocationSpinner" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
