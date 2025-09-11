@@ -1,5 +1,6 @@
 package com.example.mobile_app_final_assignment.models
 
+import com.example.mobile_app_final_assignment.network.ApiDevService
 import javax.inject.Inject
 
 class ApiDevRepoClass @Inject constructor(private val apiDevService: ApiDevService) {
