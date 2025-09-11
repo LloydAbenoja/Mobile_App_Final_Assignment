@@ -19,7 +19,10 @@ import kotlin.getValue
 import com.example.mobile_app_final_assignment.models.ResponseItem
 import com.example.mobile_app_final_assignment.recyclerview.MyRecyclerViewAdapter
 import com.example.mobile_app_final_assignment.viewmodels.DashboardScreenViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class DashboardFragment : Fragment() {
 
     private val viewModel: DashboardScreenViewModel by viewModels()
