@@ -56,6 +56,8 @@ android {
         testImplementation(libs.junit)
         androidTestImplementation(libs.androidx.junit)
         androidTestImplementation(libs.androidx.espresso.core)
+        testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
+        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
 
         // Retrofit dependancies
         implementation("com.squareup.retrofit2:retrofit:2.11.0")
@@ -66,8 +68,12 @@ android {
         // Hilt dependancies
         implementation("com.google.dagger:hilt-android:2.51.1")
         kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+        testImplementation(kotlin("test"))
 
 
+    }
+    tasks.withType<Test> {
+    useJUnitPlatform()
     }
 
 
