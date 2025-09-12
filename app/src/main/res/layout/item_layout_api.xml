@@ -15,7 +15,7 @@
         android:layout_marginBottom="16dp">
 
         <TextView
-            android:id="@+id/property1Text"
+            android:id="@+id/nameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -25,10 +25,10 @@
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Property1" />
+            tools:text="Name" />
 
         <TextView
-            android:id="@+id/property2Text"
+            android:id="@+id/architectName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -39,22 +39,22 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/property1Text"
-            tools:text="Property2" />
+            app:layout_constraintTop_toBottomOf="@+id/nameText"
+            tools:text="Architect" />
 
         <TextView
-            android:id="@+id/descAvailText"
+            android:id="@+id/yearCompletedText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="@string/description_is_available"
+            android:text=""
             android:textAppearance="?attr/textAppearanceBodyMedium"
             android:textColor="@color/material_dynamic_neutral30"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/property2Text"
-            tools:text="Description is available" />
+            app:layout_constraintTop_toBottomOf="@+id/architectName"
+            tools:text="Year Completed" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/navigationButton"

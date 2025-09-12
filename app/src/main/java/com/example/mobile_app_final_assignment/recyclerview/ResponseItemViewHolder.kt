@@ -12,15 +12,15 @@ class ResponseItemViewHolder(
     private val navigationFunction: (DashboardItem) -> Unit
 ) : RecyclerView.ViewHolder(view) {
 
-    private val property1: TextView = view.findViewById(R.id.property1Text)
-    private val property2: TextView = view.findViewById(R.id.property2Text)
-    private val description: TextView = view.findViewById(R.id.descAvailText)
+    private val nameText: TextView = view.findViewById(R.id.nameText)
+    private val architectName: TextView = view.findViewById(R.id.architectName)
+    private val yearCompleted: TextView = view.findViewById(R.id.yearCompletedText)
     private val viewDetailsButton: Button = view.findViewById(R.id.navigationButton)
 
     fun bind(item: DashboardItem) {
-        property1.text = item.property1
-        property2.text = item.property2
-        description.text = item.description
+        nameText.text = item.name
+        architectName.text = item.architect
+        yearCompleted.text = item.yearCompleted
 
         viewDetailsButton.setOnClickListener {
             navigationFunction(item)
