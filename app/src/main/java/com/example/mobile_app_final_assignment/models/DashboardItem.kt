@@ -6,7 +6,11 @@ import kotlinx.parcelize.Parcelize
 
 @kotlinx.parcelize.Parcelize
 class DashboardItem (
-    @Json(name = "property1") val property1: String?,
-    @Json(name = "property2") val property2: String?,
-    @Json(name = "description") val description: String
+    @Json(name = "name") val name: String?,
+    @Json(name = "architect") val architect: String?,
+    @Json(name = "location") val location: String?,
+    @Json(name = "yearCompleted") val yearCompleted: String?,
+    @Json(name = "style") val style: String?,
+    @Json(name = "height") val height: Int?,
+    @Json(name = "description") val description: String?
 ): Parcelable

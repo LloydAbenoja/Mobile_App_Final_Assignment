@@ -21,13 +21,13 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val property1Text = view.findViewById<TextView>(R.id.property1Text)
-        val property2Text = view.findViewById<TextView>(R.id.property2Text)
+        val nameText = view.findViewById<TextView>(R.id.nameText)
+        val architectName = view.findViewById<TextView>(R.id.architectName)
         val descriptionText = view.findViewById<TextView>(R.id.descriptionText)
 
         viewModel.item.observe(viewLifecycleOwner) { item ->
-            property1Text.text = item.property1
-            property2Text.text = item.property2
+            nameText.text = item.name
+            architectName.text = item.architect
             descriptionText.text = item.description
         }
     }

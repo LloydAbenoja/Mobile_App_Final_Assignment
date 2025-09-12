@@ -11,7 +11,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/property1Text"
+            android:id="@+id/nameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -24,7 +24,7 @@
             tools:text="Property1" />
 
         <TextView
-            android:id="@+id/property2Text"
+            android:id="@+id/architectName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -35,7 +35,7 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/property1Text"
+            app:layout_constraintTop_toBottomOf="@+id/nameText"
             tools:text="Property2" />
 
         <TextView
@@ -49,7 +49,7 @@
             android:textSize="12sp"
             android:text="@string/description_text"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/property2Text"
+            app:layout_constraintTop_toBottomOf="@+id/architectName"
             tools:text="Description" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
