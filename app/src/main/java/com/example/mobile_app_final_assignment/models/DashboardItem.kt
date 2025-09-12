@@ -4,9 +4,9 @@ import android.os.Parcelable
 import com.squareup.moshi.Json
 import kotlinx.parcelize.Parcelize
 
-@Parcelize
-data class ResponseItem(
+@kotlinx.parcelize.Parcelize
+class DashboardItem (
     @Json(name = "property1") val property1: String?,
-    @Json(name = "property2")   val property2: String?,
+    @Json(name = "property2") val property2: String?,
     @Json(name = "description") val description: String
 ): Parcelable

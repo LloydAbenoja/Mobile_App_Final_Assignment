@@ -6,18 +6,15 @@ import javax.inject.Inject
 class ApiDevRepoClass @Inject constructor(
     private val apiDevService: ApiDevService
 ) {
-    suspend fun login(location: String, username: String, password: String): AddObjectResponse {
-        val request = AddObjectRequest(
+    suspend fun login(location: String, username: String, password: String): LoginResponse {
+        val request = LoginRequest(
             username = username,
             password = password
         )
         return apiDevService.login(location, request)
     }
 
-    suspend fun getAllObjectsData() = apiDevService.getAllObjects()
-
-    suspend fun getSingleObject(id: Int) = apiDevService.getSingleObject(id)
-
-    suspend fun addSingleObject(item: AddObjectRequest) =
-        apiDevService.addObject(requestBody = item)
-}
+    suspend fun getDashboardItems(keypass: String): DashboardResponse {
+        return apiDevService.getDashboardContent(keypass = keypass)
+    }
+    }

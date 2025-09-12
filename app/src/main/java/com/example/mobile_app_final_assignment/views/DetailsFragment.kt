@@ -6,33 +6,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.mobile_app_final_assignment.R
+import com.example.mobile_app_final_assignment.viewmodels.DetailsScreenViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlin.getValue
 
-class DetailsFragment : Fragment() {
+@AndroidEntryPoint
+class DetailsFragment : Fragment(R.layout.fragment_details) {
 
-    private val arguments: DetailsFragmentArgs by navArgs()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dashboard, container, false)
-    }
+    private val viewModel: DetailsScreenViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val property1Text = view.findViewById<TextView>(R.id.property1Text)
+        val property2Text = view.findViewById<TextView>(R.id.property2Text)
+        val descriptionText = view.findViewById<TextView>(R.id.descriptionText)
 
-        view.findViewById<TextView>(R.id.property1Text).text = arguments.description.toString()
-        view.findViewById<TextView>(R.id.property2Text).text = arguments.description.toString()
-        view.findViewById<TextView>(R.id.descriptionText).text = arguments.description.toString()
+        viewModel.item.observe(viewLifecycleOwner) { item ->
+            property1Text.text = item.property1
+            property2Text.text = item.property2
+            descriptionText.text = item.description
+        }
     }
 }

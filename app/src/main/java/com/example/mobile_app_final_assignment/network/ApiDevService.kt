@@ -1,8 +1,8 @@
 package com.example.mobile_app_final_assignment.network
 
-import com.example.mobile_app_final_assignment.models.AddObjectRequest
-import com.example.mobile_app_final_assignment.models.AddObjectResponse
-import com.example.mobile_app_final_assignment.models.ResponseItem
+import com.example.mobile_app_final_assignment.models.LoginRequest
+import com.example.mobile_app_final_assignment.models.LoginResponse
+import com.example.mobile_app_final_assignment.models.DashboardResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -13,15 +13,11 @@ interface ApiDevService {
     @POST("{location}/auth")
     suspend fun login(
         @Path("location") location: String,
-        @Body request: AddObjectRequest
-    ): AddObjectResponse
+        @Body request: LoginRequest
+    ): LoginResponse
 
-    @GET("objects")
-    suspend fun getAllObjects(): List<ResponseItem>
-
-    @GET("objects/{number}")
-    suspend fun getSingleObject(@Path("number") id: Int): ResponseItem
-
-    @POST("objects")
-    suspend fun addObject(@Body requestBody: AddObjectRequest): AddObjectResponse
+    @GET("dashboard/{keypass}")
+    suspend fun getDashboardContent( // Renamed for clarity, and added keypass parameter
+        @Path("keypass") keypass: String
+    ): DashboardResponse // Should return a SINGLE DashboardResponse if it's one dashboard's content
 }
