@@ -1,33 +1,37 @@
 package com.example.mobile_app_final_assignment.viewmodels
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.mobile_app_final_assignment.models.DashboardItem
 import com.example.mobile_app_final_assignment.models.ApiDevRepoClass
-import com.example.mobile_app_final_assignment.models.ResponseItem
-import kotlinx.coroutines.delay
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class DashboardScreenViewModel @Inject constructor(private val repository: ApiDevRepoClass) : ViewModel() {
+@HiltViewModel
+class DashboardScreenViewModel @Inject constructor(
+    private val repository: ApiDevRepoClass
+) : ViewModel() {
 
-        val greetingText = MutableStateFlow("Hello Class")
-        val apiResponseObjects = MutableStateFlow<List<ResponseItem>>(listOf())
+    private val _dashboardState = MutableStateFlow<DashboardUiState>(DashboardUiState.Loading)
+    val dashboardState: StateFlow<DashboardUiState> = _dashboardState
 
-        init {
-            Log.d("MainActivity", "LoginScreenViewModel ViewModel injected ")
-
-            viewModelScope.launch {
-                val result = repository.getAllObjectsData()
-                delay(1000)
-                updateGreetingTextState("Api has responded with the following items")
-                delay(1000)
-                apiResponseObjects.value = result
+    fun loadDashboard(keypass: String) {
+        viewModelScope.launch {
+            try {
+                val response = repository.getDashboardItems(keypass) // returns DashboardResponse
+                _dashboardState.value = DashboardUiState.Success(response.entities, response.entityTotal)
+            } catch (e: Exception) {
+                _dashboardState.value = DashboardUiState.Error(e.message ?: "Unknown error")
             }
         }
-
-        private fun updateGreetingTextState(value: String) {
-            greetingText.value = value
-        }
     }
+}
+
+sealed class DashboardUiState {
+    object Loading : DashboardUiState()
+    data class Success(val items: List<DashboardItem>, val total: Int) : DashboardUiState()
+    data class Error(val message: String) : DashboardUiState()
+}
