@@ -5,7 +5,7 @@
     <string name="description_text">Description text</string>
     <string name="home_screen">Home Screen</string>
     <string name="profile_screen">Profile Screen</string>
-    <string name="dashboard_subtitle">Dashboard Subtitle</string>
+    <string name="dashboard_subtitle">Please select a building from the list below</string>
     <string name="item">item</string>
     <string name="show_description">show description</string>
     <string name="description_is_available">Description is available</string>
