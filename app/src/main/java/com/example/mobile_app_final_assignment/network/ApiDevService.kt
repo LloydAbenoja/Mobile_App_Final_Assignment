@@ -1,8 +1,8 @@
 package com.example.mobile_app_final_assignment.network
 
+import com.example.mobile_app_final_assignment.models.DashboardResponse
 import com.example.mobile_app_final_assignment.models.LoginRequest
 import com.example.mobile_app_final_assignment.models.LoginResponse
-import com.example.mobile_app_final_assignment.models.DashboardResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST

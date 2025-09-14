@@ -1,6 +1,7 @@
 package com.example.mobile_app_final_assignment.network
 
 import com.example.mobile_app_final_assignment.models.ApiDevRepoClass
+import com.example.mobile_app_final_assignment.network.ApiDevService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient

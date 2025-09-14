@@ -40,6 +40,7 @@ android {
         kotlinOptions {
             jvmTarget = "11"
         }
+
     }
 
     dependencies {
@@ -69,6 +70,14 @@ android {
         implementation("com.google.dagger:hilt-android:2.51.1")
         kapt("com.google.dagger:hilt-android-compiler:2.51.1")
         testImplementation(kotlin("test"))
+        androidTestImplementation(kotlin("test"))
+        androidTestImplementation("androidx.test.ext:junit:1.1.5")
+        androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+// Coroutines test library
+        testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+// LiveData / Arch components testing
+        testImplementation("androidx.arch.core:core-testing:2.2.0")
 
 
     }
