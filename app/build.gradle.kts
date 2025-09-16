@@ -67,13 +67,13 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:2.51.1")
 
     // --- Unit Testing ---
-    testImplementation ("junit:junit:4.13.2")                            // JUnit4
-    testImplementation ("androidx.arch.core:core-testing:2.2.0")         // LiveData / Architecture Components
-    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")  // Coroutines testing
-    testImplementation ("io.mockk:mockk:1.13.11")                        // MockK for mocking
+    testImplementation ("junit:junit:4.13.2")
+    testImplementation ("androidx.arch.core:core-testing:2.2.0")
+    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+    testImplementation ("io.mockk:mockk:1.13.11")
 
     // --- Android Instrumentation Tests ---
-    androidTestImplementation ("androidx.test.ext:junit:1.1.5")          // AndroidX JUnit
+    androidTestImplementation ("androidx.test.ext:junit:1.1.5")
     androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.1")
 }
 
