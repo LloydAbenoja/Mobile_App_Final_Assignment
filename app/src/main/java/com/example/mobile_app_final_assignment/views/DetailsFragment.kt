@@ -2,17 +2,13 @@ package com.example.mobile_app_final_assignment.views
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.example.mobile_app_final_assignment.R
 import com.example.mobile_app_final_assignment.viewmodels.DetailsScreenViewModel
-import com.google.android.material.button.MaterialButton
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.getValue
 

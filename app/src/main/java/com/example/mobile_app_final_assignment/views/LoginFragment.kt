@@ -9,7 +9,7 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.example.mobile_app_final_assignment.R
-import com.example.mobile_app_final_assignment.viewmodel.LoginScreenViewModel
+import com.example.mobile_app_final_assignment.viewmodels.LoginScreenViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.button.MaterialButton

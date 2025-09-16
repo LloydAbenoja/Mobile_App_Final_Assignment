@@ -2,6 +2,7 @@ package com.example.mobile_app_final_assignment.views
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -33,6 +34,8 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
             findNavController().navigate(action)
         }
 
+        val logoutButton = view.findViewById<ImageButton>(R.id.logoutButton)
+
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
@@ -47,14 +50,20 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
                     is DashboardUiState.Loading -> {
                         // Optionally show a spinner
                     }
+
                     is DashboardUiState.Success -> {
                         adapter.setData(state.items)
                     }
+
                     is DashboardUiState.Error -> {
                         Toast.makeText(requireContext(), state.message, Toast.LENGTH_LONG).show()
                     }
                 }
             }
+        }
+        logoutButton.setOnClickListener {
+            requireActivity().finish()
+            requireActivity().startActivity(requireActivity().intent)
         }
     }
 }

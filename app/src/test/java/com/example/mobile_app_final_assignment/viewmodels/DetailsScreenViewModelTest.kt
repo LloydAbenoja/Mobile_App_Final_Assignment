@@ -1,13 +1,17 @@
-import com.example.mobile_app_final_assignment.models.DashboardItem
-import com.example.mobile_app_final_assignment.util.InstantTaskExecutorExtension
-import com.example.mobile_app_final_assignment.viewmodels.DetailsScreenViewModel
-import org.junit.jupiter.api.extension.ExtendWith
-import org.junit.jupiter.api.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertNotNull
+package com.example.mobile_app_final_assignment.viewmodels
 
-@ExtendWith(InstantTaskExecutorExtension::class)
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.lifecycle.SavedStateHandle
+import com.example.mobile_app_final_assignment.models.DashboardItem
+import org.junit.Rule
+import org.junit.Test
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
+
 class DetailsScreenViewModelTest {
+
+    @get:Rule
+    val instantExecutorRule = InstantTaskExecutorRule()
 
     @Test
     fun `init sets DashboardItem from SavedStateHandle`() {
@@ -21,23 +25,23 @@ class DetailsScreenViewModelTest {
             description = "Famous skyscraper"
         )
 
-        val savedStateHandle = androidx.lifecycle.SavedStateHandle(mapOf("item" to dashboardItem))
+        val savedStateHandle = SavedStateHandle(mapOf("item" to dashboardItem))
         val viewModel = DetailsScreenViewModel(savedStateHandle)
 
         val itemValue = viewModel.item.value
         assertNotNull(itemValue)
-        assertEquals("Empire State Building", itemValue.name)
-        assertEquals("Shreve, Lamb & Harmon", itemValue.architect)
-        assertEquals("New York", itemValue.location)
-        assertEquals("1931", itemValue.yearCompleted)
-        assertEquals("Art Deco", itemValue.style)
-        assertEquals(381, itemValue.height)
-        assertEquals("Famous skyscraper", itemValue.description)
+        assertEquals("Empire State Building", itemValue?.name)
+        assertEquals("Shreve, Lamb & Harmon", itemValue?.architect)
+        assertEquals("New York", itemValue?.location)
+        assertEquals("1931", itemValue?.yearCompleted)
+        assertEquals("Art Deco", itemValue?.style)
+        assertEquals(381, itemValue?.height)
+        assertEquals("Famous skyscraper", itemValue?.description)
     }
 
     @Test
     fun `init with no item leaves LiveData null`() {
-        val savedStateHandle = androidx.lifecycle.SavedStateHandle()
+        val savedStateHandle = SavedStateHandle()
         val viewModel = DetailsScreenViewModel(savedStateHandle)
         val itemValue = viewModel.item.value
         assertEquals(null, itemValue)

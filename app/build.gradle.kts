@@ -43,47 +43,39 @@ android {
 
     }
 
-    dependencies {
+dependencies {
 
-        implementation(libs.androidx.core.ktx)
-        implementation(libs.androidx.appcompat)
-        implementation(libs.material)
-        implementation(libs.androidx.activity)
-        implementation(libs.androidx.constraintlayout)
-        implementation(libs.androidx.navigation.fragment.ktx)
-        implementation(libs.androidx.navigation.ui.ktx)
-        implementation(libs.androidx.recyclerview)
-        implementation(libs.androidx.fragment)
-        testImplementation(libs.junit)
-        androidTestImplementation(libs.androidx.junit)
-        androidTestImplementation(libs.androidx.espresso.core)
-        testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
-        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
+    // --- Android / UI ---
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.fragment)
 
-        // Retrofit dependancies
-        implementation("com.squareup.retrofit2:retrofit:2.11.0")
-        implementation("com.squareup.retrofit2:converter-moshi:2.11.0")
-        implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
-        implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
+    // --- Networking / Retrofit ---
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-moshi:2.11.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
 
-        // Hilt dependancies
-        implementation("com.google.dagger:hilt-android:2.51.1")
-        kapt("com.google.dagger:hilt-android-compiler:2.51.1")
-        testImplementation(kotlin("test"))
-        androidTestImplementation(kotlin("test"))
-        androidTestImplementation("androidx.test.ext:junit:1.1.5")
-        androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    // --- Dependency Injection (Hilt) ---
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
 
-// Coroutines test library
-        testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
-// LiveData / Arch components testing
-        testImplementation("androidx.arch.core:core-testing:2.2.0")
+    // --- Unit Testing ---
+    testImplementation ("junit:junit:4.13.2")                            // JUnit4
+    testImplementation ("androidx.arch.core:core-testing:2.2.0")         // LiveData / Architecture Components
+    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")  // Coroutines testing
+    testImplementation ("io.mockk:mockk:1.13.11")                        // MockK for mocking
 
-
-    }
-    tasks.withType<Test> {
-    useJUnitPlatform()
-    }
+    // --- Android Instrumentation Tests ---
+    androidTestImplementation ("androidx.test.ext:junit:1.1.5")          // AndroidX JUnit
+    androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.1")
+}
 
 
 // Allow references to generated code

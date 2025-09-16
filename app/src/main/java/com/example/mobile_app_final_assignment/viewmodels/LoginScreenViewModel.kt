@@ -1,4 +1,4 @@
-package com.example.mobile_app_final_assignment.viewmodel
+package com.example.mobile_app_final_assignment.viewmodels
 
 import androidx.lifecycle.*
 import com.example.mobile_app_final_assignment.models.ApiDevRepoClass
