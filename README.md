@@ -23,7 +23,8 @@ A Kotlin-based Android app displaying architectural landmarks in a dashboard and
 - Android Studio Narwhale 2025 1.3
 - Gradle version SDK 21.0.7
 
-Dependencies
+📝 Dependencies
+
     // --- Networking / Retrofit ---
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.retrofit2:converter-moshi:2.11.0")
